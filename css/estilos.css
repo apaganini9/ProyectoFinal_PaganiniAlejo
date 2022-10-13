@@ -1,0 +1,103 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url(../assets/font/RobotoCondensed-Regular.ttf);
+  color: black;
+  text-align: center; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #fadfbf;
+  font-family: "RobotoCondensed-Regular"; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.3fr 0.2fr 2.4fr 0.3fr;
+  grid-template-areas: "header header header"
+ "titulo titulo titulo"
+ "main main main"
+ "footer footer footer";
+  /* Desktop */
+  /* Mobile */ }
+  .container .header {
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .container .header img {
+      width: 150px; }
+    .container .header nav {
+      width: 100%;
+      list-style-type: none;
+      display: flex;
+      font-size: 1.4rem; }
+    .container .header .navbar-nav {
+      padding: 20px; }
+      .container .header .navbar-nav a:hover {
+        font-style: normal;
+        color: #fadfbf;
+        background-color: black;
+        padding: 5px; }
+  .container .titulo {
+    grid-area: titulo;
+    text-align: center;
+    padding: 5px; }
+  .container .main {
+    grid-area: main;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 0; }
+    .container .main p {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      margin: 0; }
+    .container .main .conBorde {
+      border: 1px solid black; }
+  .container .footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: black; }
+    .container .footer .autor {
+      text-align: center; }
+    .container .footer .diseño {
+      color: gray;
+      font-size: 0.8rem; }
+  @media (min-width: 1024px) {
+    .container .container {
+      grid-template-columns: 0.9fr 0.8fr 1fr;
+      grid-template-rows: 0.3fr 0.2fr 2.4fr 0.3fr;
+      grid-template-areas: "header header header" 
+ "titulo titulo titulo" 
+ "main main main" 
+ "footer footer footer"; } }
+  @media (min-width: 321px) and (max-width: 576px) {
+    .container .container {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "header"
+ "titulo"
+ "main"
+ "footer"; }
+    .container .main {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column; }
+    .container .footer {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column; } }
